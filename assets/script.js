@@ -7,13 +7,15 @@ var listHistory = document.getElementById('history');
 var allSearch = [];
 
 function searchCity() {
-  var cityInput = document.getElementById('search-bar').value;
-  allSearch.push(cityInput);
+  var inputCity = document.getElementById('search-bar').value;
+  allSearch.push(inputCity);
   localStorage.setItem("Search-History", JSON.stringify(allSearch));
+
+  document.getElementById('search-bar').value = " ";
 }
 
 function cityHistory() {
-  var storedCities = JSON.parse(localStorage.getItem("Search-History"));
+  var storedCities = JSON.parse(localStorage.getItem('Search-History'));
   if (storedCities !== null) {
     allSearch = storedCities;
 
@@ -27,14 +29,13 @@ function cityHistory() {
   }
 }
 
-cityHistory(); 
+cityHistory();
 
 function getCity() {
-  var cityInput = document.getElementById('search-bar').value;
+  var inputCity = document.getElementById('search-bar').value;
   //console.log(userInput);
   //console.log(searchButton.textContent);
-  var cityAPI = "https://api.openweathermap.org/data/2.5/forecast?q=%22"+cityInput+"%22&appid=c9c5f2198d392ad0dcd826401ee823a1";
-
+  var cityAPI = "https://api.openweathermap.org/data/2.5/weather?q="+inputCity+"&APPID=c9c5f2198d392ad0dcd826401ee823a1";
 
   fetch(cityAPI)
     .then(function (response) {
@@ -42,28 +43,54 @@ function getCity() {
     })
     .then(function (data) {
       console.log('Fetch Response \n-------------');
-      var lat = (data.city.coord.lat);
-      var lon =(data.city.coord.lon);
+      console.log(data);
+      var lat = (data.coord.lat);
+      var lon =(data.coord.lon);
       console.log(lat,lon);
-      getCoor(lat,lon);
+      getCoor(lat, lon);
   })
 };
 
+var currentDay = document.getElementById('currentDay');
+
 function getCoor(lat, lon) {
-  var coordinateAPI = "https://api.openweathermap.org/data/2.5/forecast?lat=%22"+lat+"%22&lon=%22"+lon+"%22&appid=c9c5f2198d392ad0dcd826401ee823a1";
+  var coordinateAPI = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=c9c5f2198d392ad0dcd826401ee823a1";
 
   fetch(coordinateAPI)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
+      
       console.log(data);
+
+      currentDay.innerHTML = ""; 
+      
       var temp = (data.list[0].main.temp);
+      faren = (temp-273.15)*(9/5)+32;
       var humidity = (data.list[0].main.humidity);
-      var wind = (data.list[0].wind.gust);
+      var wind = (data.list[0].wind.speed);
       var date = (data.list[0].dt_txt);
+      var formatDate = dayjs(date).format("M/D/YYYY");
       var place = (data.city.name);
       var weather = (data.list[0].weather[0].main);
-      // var temp =(data.);
+
+      var leCity = document.getElementById("leCity");
+      leCity.innerText = place + "" + formatDate;
+
+      var leTemp = document.createElement("li");
+      leTemp.textContent = "Temp: " + Math.floor(faren) + " F";
+
+      var leWind = document.createElement("li");
+      leWind.textContent = "Wind: " + wind + "MPH";
+
+      var leHumidity = document.createElement("li");
+      leHumidity.textContent = "Humidity: " + humidity;
+
+
+      currentDay.appendChild(leTemp);
+      currentDay.appendChild(leWind);
+      currentDay.appendChild(leHumidity);
     })
 };
+
