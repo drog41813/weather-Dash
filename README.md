@@ -5,12 +5,16 @@
 This password generator includes an html and css file as well as a JS file that will ask a user with a pop-up window how many characters the user would like in their password. Once the user provides a number indicating how many characters they would like, the window will continue to initiate pop-ups that ask the user if they would like Uppercase/Lowercase letters, special, and numbers in their password. Once user has answered all the pop-ups shown, a password that fits all the requirements given by the user will show up within the password generator box. 
 
 ## Usage
-The Password generator can be accessed through here: https://drog41813.github.io/weather-Dash/ ![Alt text](./Assets/passwordGen.png)
+The Password generator can be accessed through here: https://drog41813.github.io/weather-Dash/ ![Alt text](./assets/Weather-Dashboard.png)
 
 ## Credits
 The following site assisted in basic and general JS concepts as well as how to operate JS itself using various methods and syntax: https://www.w3schools.com/js/js_syntax.asp
+The following site was used to retrieve the weather API key in order for this webpage to work optimally: https://openweathermap.org/api
 The following site helped with learning how to set up various JS algorithms as well as how they affected your code as a whole: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript
 The following individual's github profile indicates partnership in regards to working together and collaborating/sharing constructive ideas with the password generator webpage: https://github.com/LucasWyski001
+The following individual's github profile indicates partnership in regards to working together and collaborating/sharing constructive ideas with the password generator webpage: https://github.com/micavilla
+The following individual's github profile indicates partnership in regards to working together and collaborating/sharing constructive ideas with the password generator webpage: https://github.com/Rockojoe2
+The following individual's github profile indicates partnership in regards to working together and collaborating/sharing constructive ideas with the password generator webpage: https://github.com/mayphamx
 
 ## License
 MIT License
