@@ -1,8 +1,8 @@
 # weather-Dash
 
 ## Description
-
-This password generator includes an html and css file as well as a JS file that will ask a user with a pop-up window how many characters the user would like in their password. Once the user provides a number indicating how many characters they would like, the window will continue to initiate pop-ups that ask the user if they would like Uppercase/Lowercase letters, special, and numbers in their password. Once user has answered all the pop-ups shown, a password that fits all the requirements given by the user will show up within the password generator box. 
+This weather dashboard will allow the user to enter a city into the search bar, which will result in showing a card representing the current date as well as the current weather conditions such as temperature, wind speed, and humidity. Along with that, there will be a five-day forecast that shows the the date and weather statistics for the following 5 days in the city that was searched. Finally, the user will be able to recall back to past cities searched up by clicking the city's name, which will show all of the previous dates and data described. 
+ 
 
 ## Usage
 The Password generator can be accessed through here: https://drog41813.github.io/weather-Dash/ ![Alt text](./assets/Weather-Dashboard.png)
