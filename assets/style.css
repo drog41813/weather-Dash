@@ -13,7 +13,7 @@ main {
   
   #search-button {
     margin-top: 10px;
-    background-color: #585191;
+    background-color: skyblue;
   }
   
   button {
@@ -26,6 +26,6 @@ main {
   }
   
   .card-body {
-    background-color: #7D6F86;
+    background-color: rgb(24, 11, 103);
     color: white;
   }
