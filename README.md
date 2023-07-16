@@ -5,7 +5,7 @@ This weather dashboard will allow the user to enter a city into the search bar, 
  
 
 ## Usage
-The Password generator can be accessed through here: https://drog41813.github.io/weather-Dash/ ![Alt text](./assets/Weather-Dashboard.png)
+The Weather Dashboard can be accessed through here: https://drog41813.github.io/weather-Dash/ ![Alt text](./assets/Weather-Dashboard.png)
 
 ## Credits
 The following site assisted in basic and general JS concepts as well as how to operate JS itself using various methods and syntax: https://www.w3schools.com/js/js_syntax.asp
