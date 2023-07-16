@@ -11,11 +11,6 @@ main {
     margin: 5px 0;
   }
   
-  #search-button {
-    margin-top: 10px;
-    background-color: skyblue;
-  }
-  
   button {
     width: 100%;
   }
@@ -25,7 +20,3 @@ main {
     margin: 5px 0;
   }
   
-  .card-body {
-    background-color: darkblue;
-    color: white;
-  }
