@@ -4,16 +4,18 @@ searchButton.addEventListener('click', getCity);
 searchButton.addEventListener('click', searchCity);
 var listHistory = document.getElementById('history');
 
+// search history array for the user
 var allSearch = [];
 
+// function that allows for searches to be stored in localStorege
 function searchCity() {
   var searchCity = document.getElementById('search-bar').value;
   allSearch.push(searchCity);
   localStorage.setItem("Search-History", JSON.stringify(allSearch));
-
-  document.getElementById('search-bar').value = " ";
+  getCity();
 }
 
+// Event listener that will allow for history buttons to recall data
 listHistory.addEventListener("click", function(event) {
   var element = event.target;
   var buttonId = element.id;
@@ -31,6 +33,8 @@ listHistory.addEventListener("click", function(event) {
       getCoordinates(lat, lon);
   })
 })
+
+// function that creates history buttons for user searches
 function cityHistory() {
   var storedCities = JSON.parse(localStorage.getItem('Search-History'));
   if (storedCities !== null) {
@@ -46,8 +50,7 @@ function cityHistory() {
   }
 }
 
-cityHistory();
-
+// function that will retrieve the latitude and longitudes of searched cities
 function getCity() {
   var inputCity = document.getElementById('search-bar').value;
   var cityAPI = "https://api.openweathermap.org/data/2.5/weather?q="+inputCity+"&APPID=" + APIKey;
@@ -66,6 +69,7 @@ function getCity() {
 
 var currentDay = document.getElementById('currentDay');
 
+// function allows for data for searched cities to be displayed
 function getCoor(lat, lon) {
   var coordinateAPI = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=" + APIKey;
 
@@ -644,3 +648,5 @@ fetch(coordinateAPI)
     day5.appendChild(leHumidity);
 })
 }
+
+cityHistory();

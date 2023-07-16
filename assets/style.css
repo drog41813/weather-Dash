@@ -1,0 +1,31 @@
+main {
+    max-width: 100%
+  }
+  
+  .search-label {
+    font-size: 1.5em;
+    margin-bottom: 2px;
+  }
+  
+  #search-bar {
+    margin: 5px 0;
+  }
+  
+  #search-button {
+    margin-top: 10px;
+    background-color: #585191;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
+  #history > button {
+    padding: 5px 0;
+    margin: 5px 0;
+  }
+  
+  .card-body {
+    background-color: #7D6F86;
+    color: white;
+  }
